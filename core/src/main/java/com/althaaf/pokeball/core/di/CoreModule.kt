@@ -7,6 +7,14 @@ import com.althaaf.pokeball.core.data.local.UserDatabase
 import com.althaaf.pokeball.core.data.local.UserPreferences
 import com.althaaf.pokeball.core.data.local.dataStore
 import com.althaaf.pokeball.core.data.network.ApiService
+import com.althaaf.pokeball.core.domain.repository.IAuthenticationRepository
+import com.althaaf.pokeball.core.domain.repository.IPokeBallRepository
+import com.althaaf.pokeball.core.domain.usecase.AuthenticationInteractor
+import com.althaaf.pokeball.core.domain.usecase.AuthenticationUseCase
+import com.althaaf.pokeball.core.domain.usecase.PokeBallInteractor
+import com.althaaf.pokeball.core.domain.usecase.PokeBallUseCase
+import com.althaaf.pokeball.core.repository.AuthRepository
+import com.althaaf.pokeball.core.repository.MainRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -57,5 +65,25 @@ val databaseModule = module {
 val dataStoreModule = module {
     single {
         UserPreferences(androidContext().dataStore)
+    }
+}
+
+val repositoryModule = module {
+    single<IPokeBallRepository> {
+        MainRepository(get())
+    }
+
+    single<IAuthenticationRepository> {
+        AuthRepository(get())
+    }
+}
+
+val useCaseModule = module {
+    single<AuthenticationUseCase> {
+        AuthenticationInteractor(get())
+    }
+
+    single<PokeBallUseCase> {
+        PokeBallInteractor(get())
     }
 }
