@@ -1,26 +1,34 @@
 package com.althaaf.pokeball.core.repository
 
 import com.althaaf.pokeball.core.data.local.UserDao
+import com.althaaf.pokeball.core.data.local.UserPreferences
 import com.althaaf.pokeball.core.domain.entity.User
 import com.althaaf.pokeball.core.domain.repository.IAuthenticationRepository
+import com.althaaf.pokeball.core.utils.MapConverter
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
 class AuthRepository(
-    private val dao: UserDao
+    private val dao: UserDao,
+    private val userPreferences: UserPreferences
 ): IAuthenticationRepository {
     override fun loginUser(username: String, password: String): Flow<User> {
-        TODO("Not yet implemented")
+        return dao.checkLogin(username, password)
+            .map { item ->
+                MapConverter.userEntityToDataDomain(data = item)
+            }
     }
 
     override fun getLoginInfo(): Flow<Boolean> {
-        TODO("Not yet implemented")
+        return userPreferences.getInfoLogin()
     }
 
     override suspend fun registerUser(username: String, password: String) {
-        TODO("Not yet implemented")
+        val mapper = MapConverter.userDomainToDataEntity(User(username, password))
+        dao.insertNewData(mapper)
     }
 
     override suspend fun setLoginInfo(isLogin: Boolean) {
-        TODO("Not yet implemented")
+        userPreferences.setInfoLogin(isLogin)
     }
 }

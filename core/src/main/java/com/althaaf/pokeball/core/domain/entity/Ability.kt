@@ -1,12 +1,14 @@
 package com.althaaf.pokeball.core.domain.entity
 
-import com.althaaf.pokeball.core.model.ability.EffectChange
-import com.althaaf.pokeball.core.model.ability.EffectEntryX
-import com.althaaf.pokeball.core.model.ability.FlavorTextEntry
-
-data class Ability(
+data class DetailPokemon(
     val name: String,
-    val effectChanges: List<EffectChange>,
-    val effectEntries: List<EffectEntryX>,
-    val flavorTextEntry: List<FlavorTextEntry>,
+    val id: Int,
+    val abilities: List<Abilities>
+)
+
+data class Abilities(
+    val name: String,
+    val url: String,
+    val is_hidden: Boolean,
+    val slot: Int
 )

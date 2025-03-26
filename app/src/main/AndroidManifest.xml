@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".PokeApplication"
@@ -16,7 +16,13 @@
         android:theme="@style/Base.Theme.PokeBall"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".screen.auth.AuthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screen.splash.SplashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screen.home.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

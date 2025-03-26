@@ -1,7 +1,7 @@
 package com.althaaf.pokeball.core.domain.usecase
 
 import androidx.paging.PagingData
-import com.althaaf.pokeball.core.domain.entity.Ability
+import com.althaaf.pokeball.core.domain.entity.DetailPokemon
 import com.althaaf.pokeball.core.domain.entity.PokeBall
 import com.althaaf.pokeball.core.domain.repository.IPokeBallRepository
 import com.althaaf.pokeball.core.utils.ApiResult
@@ -12,7 +12,7 @@ class PokeBallInteractor(private val iPokeBallRepository: IPokeBallRepository): 
         return iPokeBallRepository.getListPokemon()
     }
 
-    override suspend fun getDetailAbilityPokemon(id: Int): Flow<ApiResult<Ability>> {
+    override suspend fun getDetailAbilityPokemon(id: Int): Flow<ApiResult<DetailPokemon>> {
         return iPokeBallRepository.getDetailAbilityPokemon(id)
     }
 }

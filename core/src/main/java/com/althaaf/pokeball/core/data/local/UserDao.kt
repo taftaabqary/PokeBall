@@ -12,5 +12,5 @@ interface UserDao {
     suspend fun insertNewData(userEntity: UserEntity)
 
     @Query("SELECT * FROM user_tbl WHERE username = :username AND password = :password")
-    fun insertNewData(username: String, password: String): Flow<UserEntity>
+    fun checkLogin(username: String, password: String): Flow<UserEntity>
 }

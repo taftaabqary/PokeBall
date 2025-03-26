@@ -5,7 +5,8 @@ import com.althaaf.pokeball.core.di.dataStoreModule
 import com.althaaf.pokeball.core.di.databaseModule
 import com.althaaf.pokeball.core.di.networkModule
 import com.althaaf.pokeball.core.di.repositoryModule
-import com.althaaf.pokeball.core.di.useCaseModule
+import com.althaaf.pokeball.di.useCaseModule
+import com.althaaf.pokeball.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.loadKoinModules
@@ -23,7 +24,8 @@ class PokeApplication: Application() {
                 databaseModule,
                 dataStoreModule,
                 repositoryModule,
-                useCaseModule
+                useCaseModule,
+                viewModelModule
             ))
         }
     }
