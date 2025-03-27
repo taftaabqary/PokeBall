@@ -47,4 +47,19 @@
         <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh</item>
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
     </style>
+
+    <style name="TextAppearance.PokeBall.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/manrope_regular</item>
+        <item name="android:fontFamily">@font/manrope_regular</item>
+    </style>
+
+    <style name="ShapeAppearance.PokeBall.SmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="TextAppearance.PokeBall.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/manrope_medium</item>
+        <item name="android:fontFamily">@font/manrope_medium</item>
+    </style>
 </resources>
