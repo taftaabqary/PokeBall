@@ -7,4 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".screen.splash.SplashActivity">
 
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pokemon"
+        android:layout_marginHorizontal="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="Logo Application"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

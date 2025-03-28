@@ -35,22 +35,22 @@
         android:textColor="@color/md_theme_scrim" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/et_input_email"
+        android:id="@+id/et_input_username"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="18dp"
-        android:hint="Enter your email"
+        android:hint="Enter your username"
         android:textColorHint="@color/dark_grey"
         app:hintTextColor="@color/dark_grey"
         app:shapeAppearance="@style/ShapeAppearance.PokeBall.SmallComponent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/iet_email"
+            android:id="@+id/iet_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/manrope_regular"
-            android:inputType="textEmailAddress" />
+            android:inputType="textPersonName" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

@@ -83,6 +83,8 @@ dependencies {
     ksp(libs.room.compiler)
 
     implementation(libs.androidx.datastore.preferences)
-    implementation(libs.androidx.viewpager2)
+    api(libs.androidx.viewpager2)
 
+    api(libs.rxjava)
+    api(libs.rxbinding)
 }
